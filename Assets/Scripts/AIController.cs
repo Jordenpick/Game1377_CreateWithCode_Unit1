@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+public class AIController : MonoBehaviour
 {
     [SerializeField]
-    private Transform playerTransform;
+    private float verticalSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,6 +13,7 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = playerTransform.position;
+        transform.Translate(Vector3.forward * Time.deltaTime * verticalSpeed);
     }
 }
+
